@@ -1,0 +1,122 @@
+
+# 🗂️ Encrypted Digital Notebook – Python OOP Project
+
+## 📌 Overview
+
+This project is a command-line-based **Digital Notebook** built using Python's **Object-Oriented Programming (OOP)** principles. It allows users to:
+
+- Create categories of notes  
+- Add, edit, view, and delete notes  
+- Save/load encrypted notes using `.txt` files (Base64 encoding)  
+- Interact with the notebook using a **menu system**  
+
+It demonstrates key OOP concepts: **encapsulation**, **modularity**, **abstraction**, and **file handling** with **basic encryption**.
+
+---
+
+## 🧱 Classes and Structure
+
+### ✅ `Note` Class
+Represents a single note with:
+- `title`: Title of the note  
+- `content`: Body text  
+- `timestamp`: Date & time created/updated  
+
+**Methods:**
+- `view_note()`: Displays note details  
+- `edit_note(new_content)`: Updates the note content and timestamp  
+- `to_txt(category_name)`: Converts note to string for file storage  
+- `from_txt(lines)`: Creates a `Note` object from stored lines  
+
+---
+
+### ✅ `Category` Class
+Groups related notes.
+
+**Attributes:**
+- `category_name`: Name of the category  
+- `notes`: List of `Note` objects  
+
+**Methods:**
+- `add_note(note)`: Adds a note  
+- `remove_note(title)`: Deletes a note by title  
+- `list_notes()`: Displays all notes  
+- `save_to_encrypted_txt(filename)`: Saves encrypted notes to `.txt`  
+- `load_from_encrypted_txt(filename)`: Loads & decrypts notes from `.txt`  
+
+---
+
+## 🔐 Encryption
+- All notes are **Base64-encoded** before saving
+- This ensures the `.txt` file is not readable in plain text
+- Decoding is handled automatically when loading
+
+---
+
+## 📖 Menu System
+
+A menu-based UI for interacting with the notebook. Users can:
+
+1. Create a new category  
+2. Add a new note  
+3. View all notes in a category  
+4. Edit a note by title  
+5. Delete a note  
+6. Save notes to an encrypted `.txt` file  
+7. Load notes from an encrypted `.txt` file  
+8. List all `.txt` files in the current folder  
+9. Exit the program  
+
+---
+
+## 📂 File Storage Format
+
+Each note is stored in the format (before encryption):
+
+```
+Category: Personal
+Title: Shopping List
+Content: Milk, Eggs, Bread
+Timestamp: 2025-04-12T10:40:15.456789
+---
+```
+
+Notes are stored line-by-line and encrypted with base64 before saving.
+
+---
+
+## ▶️ How to Run
+
+1. Make sure Python is installed.  
+2. Save the file as `notebook.py`  
+3. Run the program:
+   ```bash
+   python notebook.py
+   ```
+
+---
+
+## 🧪 Sample Usage
+
+```python
+note1 = Note("Reminder", "Finish Python OOP project")
+cat = Category("Work")
+cat.add_note(note1)
+cat.save_to_encrypted_txt("work_notes.txt")
+
+# Later or in another run
+cat2 = Category("Work")
+cat2.load_from_encrypted_txt("work_notes.txt")
+cat2.list_notes()
+```
+
+---
+
+
+## 🎓 Educational Purpose
+
+This project is ideal for:
+- Practicing Python OOP
+- Understanding file handling
+- Learning how to encode/decode with base64
+- Building menu-driven command-line tools

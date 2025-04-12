@@ -1,0 +1,89 @@
+# Smart Home Automation System - Documentation
+
+## Introduction
+This project is a **Smart Home Automation System** built using Python and Object-Oriented Programming (OOP). It allows users to control various smart devices such as **Lights, Fans, and Air Conditioners (ACs)** within a room. The project includes a **menu-driven interface** for easy interaction.
+
+## Purpose
+This project was developed as a **beginner-level OOP practice** to test concepts like **inheritance, polymorphism, and encapsulation**. It provides a structured way to manage smart home devices efficiently.
+
+---
+
+## Features
+✅ **Device Management** – Supports different types of smart devices (Lights, Fans, ACs).  
+✅ **Room-Based Organization** – Devices are grouped into rooms for efficient control.  
+✅ **User Interaction** – Users can add devices, control them, and check status via a menu.  
+✅ **Batch Control** – Turn all devices ON/OFF at once.  
+✅ **Dynamic Properties** – Lights have brightness levels, Fans have speed levels, and ACs have temperature settings.  
+
+---
+
+## Class Structure
+
+### **1. Device (Base Class)**
+- Attributes: `name`, `is_on`
+- Methods:
+  - `turn_on()`: Turns the device ON
+  - `turn_off()`: Turns the device OFF
+  - `get_status()`: Returns the device status
+
+### **2. Light (Inherits from Device)**
+- Additional Attribute: `brightness`
+- Additional Method: `set_brightness()` (Sets brightness level)
+
+### **3. Fan (Inherits from Device)**
+- Additional Attribute: `fanspeed`
+- Additional Method: `set_fan_speed()` (Sets fan speed level)
+
+### **4. AC (Inherits from Device)**
+- Additional Attribute: `temp`
+- Additional Method: `set_temperature()` (Sets temperature level)
+
+*5. Room Clasa
+- Attributes: `name`, `devices` (list of devices in the room)
+- Methods:
+  - `add_device()`: Adds a device to the room
+  - `control_all()`: Turns all devices ON/OFF
+  - `get_status()`: Displays the status of all devices in the room
+
+ **6. User Class
+- Attribute: `name`
+- Methods:
+  - `control_device()`: Controls a specific device
+
+---
+
+## How to Use
+
+### **1. Start the System**
+Run the script, and the **menu interface** will appear.
+
+### **2. Select a Room and User**
+The system will prompt the user to enter a room name and a user name.
+
+### **3. Use the Menu Options**
+- `1️⃣ Add Light` – Add a new light to the room.
+- `2️⃣ Add Fan` – Add a new fan to the room.
+- `3️⃣ Add AC` – Add a new AC to the room.
+- `4️⃣ Control All Devices` – Turn all devices ON/OFF.
+- `5️⃣ Check Room Status` – View the status of all devices.
+- `6️⃣ Exit` – Close the program.
+
+---
+
+## Example Usage
+```
+🏠 Welcome to the Smart Home Automation System 🏠
+🏡 Enter Room Name: Living Room
+👤 Enter User Name: John
+
+📜 Menu:
+1️⃣ Add Light
+2️⃣ Add Fan
+3️⃣ Add AC
+4️⃣ Control All Devices
+5️⃣ Check Room Status
+6️⃣ Exit
+🎯 Enter your choice: 1
+💡 Enter Light Name: Ceiling Light
+✅ Ceiling Light has been added to Living Room.
+```
